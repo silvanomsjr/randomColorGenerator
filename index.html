@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="color-back">
+        <div class="container">
+            <h1>Cor atual:</h1>
+            <p class="color-act">#000000</p>
+            <button class="colorbtn">Gerar nova cor</button>
+        </div>
+    </div>
+    
+    <script>
+        const button = document.querySelector('.colorbtn');
+        const actualColor = document.querySelector('.color-act');
+        const hexColor = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+
+        button.addEventListener('click', () =>{
+            let newColor = '#';
+            for(let i = 0; i < 6; i++){
+                newColor += hexColor[Math.floor(Math.random() * (15 - 0 + 1) + 0)];
+            }
+            actualColor.innerHTML = newColor;
+            document.body.style.backgroundColor = newColor;
+
+        });
+    </script>
+
+</body>
+</html>
